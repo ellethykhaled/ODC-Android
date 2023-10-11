@@ -6,4 +6,5 @@
     <!-- Mobile types -->
     <string name="samsung">Samsung</string>
     <string name="i_phone">iPhone</string>
+    <string name="unknown">Unknown</string>
 </resources>

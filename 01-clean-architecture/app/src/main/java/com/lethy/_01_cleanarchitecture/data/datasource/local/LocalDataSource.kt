@@ -7,14 +7,14 @@ class LocalDataSource : LocalSourceI {
 
     private var dummyToggler = false
 
-    override suspend fun getPhoneData(): PhoneDataModel {
+    override fun getPhoneData(): PhoneDataModel {
         Log.i("Used source", "Local Data source")
         dummyToggler = !dummyToggler
         return PhoneDataModel(
             if (dummyToggler)
-                "Samsung"
+                "S"
             else
-                "iPhone"
+                "I"
         )
     }
 }
