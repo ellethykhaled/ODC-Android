@@ -1,6 +1,7 @@
 package com.lethy._01_cleanarchitecture.data.datasource
 
 import android.util.Log
+import android.widget.Toast
 import com.lethy._01_cleanarchitecture.data.datasource.local.LocalDataSource
 import com.lethy._01_cleanarchitecture.data.datasource.remote.RemoteDataSource
 import com.lethy._01_cleanarchitecture.data.model.PhoneDataModel
@@ -13,7 +14,8 @@ class DataSource : DataSourceI {
     override suspend fun getPhoneData(): PhoneDataModel {
         return try {
             remoteDataSource.getPhoneData()
-        } catch (_: Exception) {
+        } catch (e: Exception) {
+            e.printStackTrace()
             Log.e("Error", "Failed to fetch remote data")
             localDataSource.getPhoneData()
         }
